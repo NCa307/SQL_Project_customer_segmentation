@@ -22,7 +22,7 @@ This project analyzes banking transaction data to segment customers based on the
 ### 1. **Recency (R)**
 Indicates an active relationship vs. a dormant account.
 - **R=5 (Recent)**: Active relationship - active transactions (e.g., a customer who transferred money yesterday)
-- **R=1 (Old)**: Dormant account - might be saving-only or about to churn (no transaction activity in 6 months)
+- **R=1 (Old)**: Dormant account - might be saving-only or about to churn (e.g. no transaction activity in 6 months)
 
 ### 2. **Frequency (F)**
 How often does the customer conduct transactions?
