@@ -15,7 +15,7 @@ This project analyzes banking transaction data to segment customers based on the
 - At which times during the day do we see the highest number of transactions?
 
 ### 4. Monetary Value Segmentation
-- Segmenting customers based on the volume of transactions (sum and average) per customer group.
+- Segmenting customers based on the volume and number of transactions.
 
 ## 📈 RFM Analysis Framework
 
