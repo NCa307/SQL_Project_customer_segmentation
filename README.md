@@ -9,7 +9,7 @@ This project analyzes banking transaction data to segment customers based on the
 - Grouping customers according to the frequency and volume of transactions per month.
 
 ### 2. Monthly Transaction Trends
-- During which months do we have the highest amount and volume of transactions?
+- During which months do we have the highest number and volume of transactions?
 
 ### 3. Time-Based Segmentation
 - At which times during the day do we see the highest number of transactions?
