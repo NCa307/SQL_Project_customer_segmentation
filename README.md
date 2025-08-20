@@ -16,6 +16,8 @@ This project analyzes banking transaction data to segment customers based on the
 
 ### 4. Monetary Value Segmentation
 - Segmenting customers based on the volume and number of transactions.
+### 4. Location- Based Segmentation 
+- Which cities have the 
 
 ## 📈 RFM Analysis Framework
 
@@ -33,5 +35,9 @@ How often does the customer conduct transactions?
 How valuable is the customer in terms of account balance and transaction amounts?
 - **M=5**: High account balance, large transaction volume
 - **M=1**: Low amount of transactions, low account balance
--
-
+### RFM Segments **
+-**1. Power Users
+-**2. Salary Accounts
+-**3. Dormant Savers
+-**4. Transaction Heavy
+-**5. Churn Risks
