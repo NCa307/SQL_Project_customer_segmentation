@@ -1,23 +1,37 @@
-MySQL Bank Customer Segmentation Project
-Insights to be explored:
--Identifying transaction behaviour per customer:
-Grouping customers according to the frequency and volume of transactions per month
--During which months do we have the highest amount and volume of transactions?
--Time based segmentation: At which times during the days do we see the highest number of transactions?
--Monetary Value Segmentation based on the volume of transactions (sum and average) per customer group.
+# MySQL Bank Customer Segmentation Project
 
--RFM Analysis:
-1. Recency: Indicates an active relationship vs. a dormant account
-Recent(R=5): Active relationship-active transactions (exp. a customer who transferred money yesterday)
-Old(R=1): Dormant account-might be only saving or about to churn. (no transaction activity in 6 months)
-2. Frequency: How often does the customer conduct transactions?
-High-frequency(F=5): The customer depends on the bank strongly for her daily transactions
-Low frequency(F=1): Occasional user. For example quarterly transactions only.
-3. How valuable is the customer in terms of account balance and transaction amounts?
-M=5: High account balance, large transation volume
-M=1: Low amount of transactions, Low account balance
+## 📊 Project Overview
+This project analyzes banking transaction data to segment customers based on their behavior, transaction patterns, and value using SQL. The goal is to derive actionable insights for targeted marketing, customer retention, and service optimization.
 
-RFM Segments:
--Recent, Frequent, High-amount transaction and account balance customers: Power Users
+## 🔍 Insights to be Explored
+
+### 1. Transaction Behavior per Customer
+- Grouping customers according to the frequency and volume of transactions per month.
+
+### 2. Monthly Transaction Trends
+- During which months do we have the highest amount and volume of transactions?
+
+### 3. Time-Based Segmentation
+- At which times during the day do we see the highest number of transactions?
+
+### 4. Monetary Value Segmentation
+- Segmenting customers based on the volume of transactions (sum and average) per customer group.
+
+## 📈 RFM Analysis Framework
+
+### 1. **Recency (R)**
+Indicates an active relationship vs. a dormant account.
+- **R=5 (Recent)**: Active relationship - active transactions (e.g., a customer who transferred money yesterday)
+- **R=1 (Old)**: Dormant account - might be saving-only or about to churn (no transaction activity in 6 months)
+
+### 2. **Frequency (F)**
+How often does the customer conduct transactions?
+- **F=5 (High-frequency)**: The customer depends heavily on the bank for daily transactions
+- **F=1 (Low frequency)**: Occasional user (e.g., quarterly transactions only)
+
+### 3. **Monetary (M)**
+How valuable is the customer in terms of account balance and transaction amounts?
+- **M=5**: High account balance, large transaction volume
+- **M=1**: Low amount of transactions, low account balance
 -
 
