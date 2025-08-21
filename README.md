@@ -1,7 +1,9 @@
 # MySQL Bank Customer Segmentation Project
 
 ## Data Description
+
 Link: https://www.kaggle.com/datasets/shivamb/bank-customer-segmentation
+
 This dataset consists of 1 Million+ transaction by over 800K customers for a bank in India for the year 2016. The data contains customer information such as - customer ID, year of birth, location, gender, account balance at the time of the transaction, transaction date, transaction date, transaction time and transaction amount.
 
 ## 📊 Project Overview
