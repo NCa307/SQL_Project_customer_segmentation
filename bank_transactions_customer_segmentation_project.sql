@@ -121,7 +121,8 @@ FROM transactions
 GROUP BY CustomerID
 ORDER BY Recency, Monetary DESC; -- Orders results by biggest spenders and most recent
 
-#Grouping the customers into three Segments (1,2,3)
+#Grouping the customers into three Segments (1,2,3) with two CTEs(customer_rfm and rfm_scores). The customer_rfm is fed into
+#rfm_scores and the final SELECT uses the output rfm_scores. NTILE divides the RFM results into buckets.
 WITH customer_rfm AS (
     SELECT 
         CustomerID,
