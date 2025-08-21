@@ -52,13 +52,44 @@ How valuable is the customer in terms of account balance and transaction amounts
 - **M=3**: High account balance, large transaction volume
 - **M=1**: Low amount of transactions, low account balance
 ### RFM Segments **
-🏆 RFM Customer Segmentation (3-Tier Model)
-📊 Segment Definitions
-Segment	RFM Criteria	Description
--**1. Elite Customers (R_Score = 3 AND F_Score = 3 AND M_Score = 3): Top-performing customers across all dimensions
--**2. Active Regulars (R_Score = 3 AND F_Score >= 2): Recently active with solid engagement
--**3. High Value (R_Score >= 2 AND M_Score = 3): Big spenders who may be less recent
--**4. Frequent Spenders (F_Score = 3 AND M_Score >= 2): Habitual buyers with consistent value
--**5. New / Low Engagement (R_Score = 3 AND F_Score = 1): Recently acquired or rarely engaging customers
--**6. At Risk (R_Score = 1 AND (F_Score >= 2 OR M_Score >= 2)): Previously valuable but now inactive customers
--**7. Inactive Low Value (R_Score = 1 AND F_Score = 1 AND M_Score = 1): Least valuable and inactive customers
+# RFM Customer Segmentation Analysis
+
+## Overview
+RFM (Recency, Frequency, Monetary) analysis is a powerful marketing technique used to segment customers based on their transaction behavior. This document outlines the 7 key customer segments derived from a 3-tier RFM analysis.
+
+## RFM Segments
+
+### 🥇 1. Elite Customers
+**Criteria:** `R_Score = 3 AND F_Score = 3 AND M_Score = 3`  
+**Description:** Top-performing customers across all dimensions - most recent, most frequent, and highest spending.
+
+### 🔄 2. Active Regulars  
+**Criteria:** `R_Score = 3 AND F_Score >= 2`  
+**Description:** Recently active customers with solid engagement frequency.
+
+### 💰 3. High Value
+**Criteria:** `R_Score >= 2 AND M_Score = 3`  
+**Description:** Big spenders who may be less recent but contribute significant value.
+
+### 🛒 4. Frequent Spenders
+**Criteria:** `F_Score = 3 AND M_Score >= 2`  
+**Description:** Habitual buyers who transact frequently with consistent value.
+
+### 🌱 5. New / Low Engagement
+**Criteria:** `R_Score = 3 AND F_Score = 1`  
+**Description:** Recently acquired customers or those with minimal engagement frequency.
+
+### ⚠️ 6. At Risk
+**Criteria:** `R_Score = 1 AND (F_Score >= 2 OR M_Score >= 2)`  
+**Description:** Previously valuable customers who have become inactive recently.
+
+### 💤 7. Inactive Low Value
+**Criteria:** `R_Score = 1 AND F_Score = 1 AND M_Score = 1`  
+**Description:** Least valuable and completely inactive customer segment.
+
+## Scoring System
+| Score | Recency | Frequency | Monetary |
+|-------|---------|-----------|----------|
+| 3 | Most Recent | Most Frequent | Highest Spending |
+| 2 | Middle Tier | Middle Tier | Middle Tier |
+| 1 | Least Recent | Least Frequent | Lowest Spending |
