@@ -39,21 +39,57 @@ This project analyzes banking transaction data to segment customers based on the
 
 ### 1. **Recency (R)**
 Indicates an active relationship vs. a dormant account.
-- **R=5 (Recent)**: Active relationship - active transactions (e.g., a customer who transferred money yesterday)
+- **R=3 (Recent)**: Active relationship - active transactions (e.g., a customer who transferred money yesterday)
 - **R=1 (Old)**: Dormant account - might be saving-only or about to churn (e.g. no transaction activity in 6 months)
 
 ### 2. **Frequency (F)**
 How often does the customer conduct transactions?
-- **F=5 (High-frequency)**: The customer depends heavily on the bank for daily transactions
+- **F=3 (High-frequency)**: The customer depends heavily on the bank for daily transactions
 - **F=1 (Low frequency)**: Occasional user (e.g., quarterly transactions only)
 
 ### 3. **Monetary (M)**
 How valuable is the customer in terms of account balance and transaction amounts?
-- **M=5**: High account balance, large transaction volume
+- **M=3**: High account balance, large transaction volume
 - **M=1**: Low amount of transactions, low account balance
-### RFM Segments **
--**1. Power Users
--**2. Salary Accounts
--**3. Dormant Savers
--**4. Transaction Heavy
--**5. Churn Risks
+
+# RFM Customer Segmentation Analysis
+
+## Overview
+RFM (Recency, Frequency, Monetary) analysis is a powerful marketing technique used to segment customers based on their transaction behavior. This document outlines the 7 key customer segments derived from a 3-tier RFM analysis.
+
+## RFM Segments
+
+### 🥇 1. Elite Customers
+**Criteria:** `R_Score = 3 AND F_Score = 3 AND M_Score = 3`  
+**Description:** Top-performing customers across all dimensions - most recent, most frequent, and highest spending.
+
+### 🔄 2. Active Regulars  
+**Criteria:** `R_Score = 3 AND F_Score >= 2`  
+**Description:** Recently active customers with solid engagement frequency.
+
+### 💰 3. High Value
+**Criteria:** `R_Score >= 2 AND M_Score = 3`  
+**Description:** Big spenders who may be less recent but contribute significant value.
+
+### 🛒 4. Frequent Spenders
+**Criteria:** `F_Score = 3 AND M_Score >= 2`  
+**Description:** Habitual buyers who transact frequently with consistent value.
+
+### 🌱 5. New / Low Engagement
+**Criteria:** `R_Score = 3 AND F_Score = 1`  
+**Description:** Recently acquired customers or those with minimal engagement frequency.
+
+### ⚠️ 6. At Risk
+**Criteria:** `R_Score = 1 AND (F_Score >= 2 OR M_Score >= 2)`  
+**Description:** Previously valuable customers who have become inactive recently.
+
+### 💤 7. Inactive Low Value
+**Criteria:** `R_Score = 1 AND F_Score = 1 AND M_Score = 1`  
+**Description:** Least valuable and completely inactive customer segment.
+
+## Scoring System
+| Score | Recency | Frequency | Monetary |
+|-------|---------|-----------|----------|
+| 3 | Most Recent | Most Frequent | Highest Spending |
+| 2 | Middle Tier | Middle Tier | Middle Tier |
+| 1 | Least Recent | Least Frequent | Lowest Spending |
