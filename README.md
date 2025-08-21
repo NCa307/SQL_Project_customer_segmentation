@@ -51,7 +51,7 @@ How often does the customer conduct transactions?
 How valuable is the customer in terms of account balance and transaction amounts?
 - **M=3**: High account balance, large transaction volume
 - **M=1**: Low amount of transactions, low account balance
-### RFM Segments **
+
 # RFM Customer Segmentation Analysis
 
 ## Overview
