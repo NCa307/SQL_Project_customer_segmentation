@@ -52,9 +52,13 @@ How valuable is the customer in terms of account balance and transaction amounts
 - **M=3**: High account balance, large transaction volume
 - **M=1**: Low amount of transactions, low account balance
 ### RFM Segments **
--**1. Elite Customers (R_Score = 3 AND F_Score = 3 AND M_Score = 3)
--**2. Active Regulars (R_Score = 3 AND F_Score >= 2)
--**3. High Value (R_Score >= 2 AND M_Score = 3)
--**4. Frequent Spenders (F_Score = 3 AND M_Score >= 2)
--**5. New / Low Engagement (R_Score = 3 AND F_Score = 1)
--**6. Inactive Low Value 
+🏆 RFM Customer Segmentation (3-Tier Model)
+📊 Segment Definitions
+Segment	RFM Criteria	Description
+-**1. Elite Customers (R_Score = 3 AND F_Score = 3 AND M_Score = 3): Top-performing customers across all dimensions
+-**2. Active Regulars (R_Score = 3 AND F_Score >= 2): Recently active with solid engagement
+-**3. High Value (R_Score >= 2 AND M_Score = 3): Big spenders who may be less recent
+-**4. Frequent Spenders (F_Score = 3 AND M_Score >= 2): Habitual buyers with consistent value
+-**5. New / Low Engagement (R_Score = 3 AND F_Score = 1): Recently acquired or rarely engaging customers
+-**6. At Risk (R_Score = 1 AND (F_Score >= 2 OR M_Score >= 2)): Previously valuable but now inactive customers
+-**7. Inactive Low Value (R_Score = 1 AND F_Score = 1 AND M_Score = 1): Least valuable and inactive customers
