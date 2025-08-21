@@ -1,23 +1,36 @@
 # MySQL Bank Customer Segmentation Project
 
+## Data Description
+
+
+
 ## 📊 Project Overview
 This project analyzes banking transaction data to segment customers based on their behavior, transaction patterns, and value using SQL. The goal is to derive actionable insights for targeted marketing, customer retention, and service optimization.
 
 ## 🔍 Insights to be Explored
 
-### 1. Transaction Behavior per Customer
-- Grouping customers according to the frequency and volume of transactions per month.
+### 1. Customer Count By City
+- Identifying Key Markets
 
-### 2. Monthly Transaction Trends
-- During which months do we have the highest number and volume of transactions?
+### 2. Average Account Balance by City
+- Identifying wealthier regions on average
 
-### 3. Time-Based Segmentation
-- At which times during the day do we see the highest number of transactions?
+### 3. Total Deposits Held by Location
+- Sum of Account Balances per City 
 
-### 4. Monetary Value Segmentation
-- Segmenting customers based on the volume and number of transactions.
-### 4. Location- Based Segmentation 
-- Which cities have the 
+### 4. Average Transaction Amount per Location
+- Cities with higher average transaction amounts might be good targets for premium credit cards, personal loan campaigns etc.
+  
+### 5. Transaction Activity Level per Location (Transaction Frequency)
+
+### 6. Total Transaction Volume per Location
+-Which cities drive the most economic activity theough the bank? For example mega cities with large population sizes such as Mumbai will typically have higher volume even if each customer doesn't spend that much.
+
+### 7. Peak Transaction Hours (number of transactions) per Location
+
+### 8. Peak Transaction Months (number of transactions) per Location
+
+### 9. Weekday vs. Weekend Activity (number of transactions)
 
 ## 📈 RFM Analysis Framework
 
