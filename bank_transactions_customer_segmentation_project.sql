@@ -1,10 +1,18 @@
 USE mini_project_bank;
 SELECT count(*) FROM mini_project_bank.transactions;
 SELECT *
+FROM transactions
+LIMIT 2;
+
+SELECT 
+    COUNT(DISTINCT CustomerID) AS total_customers,
+    COUNT(DISTINCT CustLocation) AS unique_locations,
+    COUNT(TransactionID) AS total_transactions,
+    ROUND(AVG(TransactionAmount), 2) AS avg_transaction_amount
 FROM transactions;
 
 #Customer Count by City (Identifying key markets)
-SELECT CustLocation, COUNT(CustomerID) AS customer_count
+SELECT CustLocation, COUNT(DISTINCT CustomerID) AS customer_count
 FROM transactions
 GROUP BY CustLocation
 ORDER BY customer_count DESC
@@ -20,7 +28,8 @@ ORDER BY avg_balance DESC;
 SELECT CustLocation, SUM(CustAccountBalance) AS total_deposits
 FROM transactions
 GROUP BY CustLocation
-ORDER BY total_deposits DESC;
+ORDER BY total_deposits DESC
+LIMIT 10;
 
 #Average Transaction Amount by Location
 #Cities with higher average transaction amounts might be good targets for premium credit cards, personal loan campaigns etc.
@@ -32,17 +41,19 @@ ORDER BY average_transaction_amount DESC;
 #It is influenced by wealth/income level. 
 
 #Transaction Frequency by Location (Transaction Activity Level)
-SELECT CustLocation, COUNT(TransactionID) AS total_transactions
+SELECT CustLocation, COUNT(DISTINCT(TransactionID)) AS total_transactions
 FROM transactions
 GROUP BY CustLocation
-ORDER BY total_transactions DESC;
+ORDER BY total_transactions DESC
+LIMIT 10;
 #Mumbai has the highest active customer base -these customers might be more receptive to digital banking features or loyalty programs.
 
 #Total Transaction Volume by City
 SELECT CustLocation, SUM(TransactionAmount) AS total_transaction_amount
 FROM transactions
 GROUP BY CustLocation
-ORDER BY total_transaction_amount DESC;
+ORDER BY total_transaction_amount DESC
+LIMIT 10;
 #Which cities drive the most economic activity through the bank. Measures the overall economic activity or market size that the 
 #bank facilitates in this city. For example mega cities such as Mumbai have large population size will typically have high total
 #volume even if each customer doesn't spend that much.
@@ -78,6 +89,7 @@ END //
 
 DELIMITER ;
 CALL GetCitySummary2('Mumbai');
+CALL GetCitySummary2('Bangalore');
 
 #Peak Transaction Months per Location
 SELECT CustLocation, MONTH(TransactionDate) AS transaction_month, COUNT(TransactionID) AS transaction_count
@@ -155,19 +167,15 @@ SELECT
     CASE
         -- Top Tier: Excellent across all dimensions
         WHEN R_Score = 3 AND F_Score = 3 AND M_Score = 3 THEN 'Elite Customers'
-        
-        -- Middle Tier: Good performance in some areas
+                -- Middle Tier: Good performance in some areas
         WHEN R_Score = 3 AND F_Score >= 2 THEN 'Active Regulars'
         WHEN R_Score >= 2 AND M_Score = 3 THEN 'High Value'
         WHEN F_Score = 3 AND M_Score >= 2 THEN 'Frequent Spenders'
-        
-        -- New/Low Engagement Tier
+                -- New/Low Engagement Tier
         WHEN R_Score = 3 AND F_Score = 1 THEN 'New/Low Engagement'
-        
-        -- Bottom Tier: Poor performance across dimensions
+                -- Bottom Tier: Poor performance across dimensions
         WHEN R_Score = 1 AND F_Score = 1 AND M_Score = 1 THEN 'Inactive Low Value'
-        
-        -- At Risk: Were good but declining
+                -- At Risk: Were good but declining
         WHEN R_Score = 1 AND (F_Score >= 2 OR M_Score >= 2) THEN 'At Risk'
         
         ELSE 'Average Customers'
@@ -175,5 +183,16 @@ SELECT
 FROM rfm_scores
 ORDER BY R_Score DESC, F_Score DESC, M_Score DESC;
 
-
+SELECT 
+    transactions_per_customer,
+    COUNT(*) AS number_of_customers
+FROM (
+    SELECT 
+        CustomerID, 
+        COUNT(TransactionID) AS transactions_per_customer
+    FROM transactions
+    GROUP BY CustomerID
+) AS customer_transaction_counts
+GROUP BY transactions_per_customer
+ORDER BY transactions_per_customer;
 
